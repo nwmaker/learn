@@ -50,3 +50,18 @@ console.log(gX()) // 36
 But if the arrow function is used in testing, that this is bound to the global, e.g. in the browser, that this is Window.
 
 
+```
+function list() {
+  return Array.prototype.slice.call(arguments);
+}
+
+const list1 = list(1, 2, 3, 4)
+
+const leading36List = list.bind(null, 36)
+const list2 = leading36List()
+const list3 = leading36List(2, 3, 4)
+```
+
+## Reference
+* [MDN bind](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind)
+
